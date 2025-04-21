@@ -1,0 +1,212 @@
+vue@3:12288 You are running a development build of Vue.
+Make sure to use the production build (*.prod.js) when deploying for production.
+xhr.js:195
+
+
+           GET http://127.0.0.1:8000/proxy/info/api/TimeLine/ 400 (Bad Request)
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadHours @ info_main.js:47
+created @ info_main.js:178
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184
+xhr.js:195
+
+
+           GET http://127.0.0.1:8000/proxy/info/api/Params/ 400 (Bad Request)
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadParams @ info_main.js:33
+created @ info_main.js:177
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184
+xhr.js:195
+
+
+           GET http://127.0.0.1:8000/proxy/info/api/Curriculum/0/0/ 400 (Bad Request)
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadCurriculum @ info_main.js:56
+created @ info_main.js:180
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184
+settle.js:19 Uncaught (in promise) de {message: 'Request failed with status code 400', name: 'AxiosError', code: 'ERR_BAD_REQUEST', config: {…}, request: XMLHttpRequest, …}code: "ERR_BAD_REQUEST"config: {transitional: {…}, adapter: Array(3), transformRequest: Array(1), transformResponse: Array(1), timeout: 0, …}message: "Request failed with status code 400"name: "AxiosError"request: XMLHttpRequest {onreadystatechange: null, readyState: 4, timeout: 0, withCredentials: false, upload: XMLHttpRequestUpload, …}response: {data: '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">… could not understand.<br />\n</p>\n</body></html>\n', status: 400, statusText: 'Bad Request', headers: r, config: {…}, …}status: 400stack: "AxiosError: Request failed with status code 400\n    at Xe (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:31465)\n    at XMLHttpRequest.y (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:36340)\n    at e.<anonymous> (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:48320)\n    at p (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:3448)\n    at Generator.<anonymous> (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:4779)\n    at Generator.throw (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:3858)\n    at p (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:9996)\n    at s (https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js:2:10235)"[[Prototype]]: Error
+Xe @ settle.js:19
+y @ xhr.js:59
+XMLHttpRequest.send
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadHours @ info_main.js:47
+created @ info_main.js:178
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184
+settle.js:19 Uncaught (in promise) de {message: 'Request failed with status code 400', name: 'AxiosError', code: 'ERR_BAD_REQUEST', config: {…}, request: XMLHttpRequest, …}
+Xe @ settle.js:19
+y @ xhr.js:59
+XMLHttpRequest.send
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadParams @ info_main.js:33
+created @ info_main.js:177
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184
+settle.js:19 Uncaught (in promise) de {message: 'Request failed with status code 400', name: 'AxiosError', code: 'ERR_BAD_REQUEST', config: {…}, request: XMLHttpRequest, …}
+Xe @ settle.js:19
+y @ xhr.js:59
+XMLHttpRequest.send
+(anonymous) @ xhr.js:195
+xhr @ xhr.js:15
+Pt @ dispatchRequest.js:51
+value @ Axios.js:187
+(anonymous) @ Axios.js:40
+p @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+p @ axios.min.js:2
+a @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ axios.min.js:2
+(anonymous) @ Axios.js:63
+he.forEach.Ft.<computed> @ Axios.js:213
+(anonymous) @ bind.js:5
+loadCurriculum @ info_main.js:56
+created @ info_main.js:180
+callWithErrorHandling @ vue@3:2410
+callWithAsyncErrorHandling @ vue@3:2417
+callHook$1 @ vue@3:5813
+applyOptions @ vue@3:5734
+finishComponentSetup @ vue@3:10120
+setupStatefulComponent @ vue@3:10045
+setupComponent @ vue@3:9970
+mountComponent @ vue@3:7360
+processComponent @ vue@3:7326
+patch @ vue@3:6855
+render @ vue@3:8123
+mount @ vue@3:6123
+app.mount @ vue@3:12199
+(anonymous) @ info_main.js:184

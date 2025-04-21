@@ -1,0 +1,64 @@
+опитвам от едно приложение на Django, по точно от потребителския му интерфейс посредством библиотеката axios.js да извикам API услуга от друго приложение (на друг сървър) и получавам следната грешка:Access to XMLHttpRequest at 'https://pgeebansko.org/info/api/TimeLine/' from origin 'http://127.0.0.1:8000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Запитването е axios.get('https://pgeebansko.org/info/api/Curriculum/'+vm.time.day_num+'/'+vm.hour.num+'/')
+Същото на практика запитване https://pgeebansko.org/info/api/Curriculum/0/1/, направено през браузър работи коректно. Обясни ми грешката, причините за нея, и възможните решения
+Това, което виждаш, е CORS грешка (Cross-Origin Resource Sharing).
+Това е един от най-често срещаните проблеми при работа с API-та от браузър, когато фронтенд и бекенд са на различни домейни/портове.
+
+Какво означава грешката?
+Access to XMLHttpRequest at 'https://pgeebansko.org/info/api/TimeLine/' from origin 'http://127.0.0.1:8000' has been blocked by CORS policy:
+No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Обяснение:
+
+Origin ти е http://127.0.0.1:8000 (локалният ти сървър).
+Опитваш се да направиш AJAX (axios) заявка към https://pgeebansko.org (друг сървър, друг домейн и протокол).
+Браузърът, заради политики за сигурност, не позволява на JavaScript, стартиран от един "origin" (тук: localhost), да достъпва ресурси от друг "origin" (тук: pgeebansko.org), освен ако сървърът-цел изрично не разреши това чрез специални HTTP хедъри.
+Защо работи през браузър, но не и през axios?
+Когато пишеш URL в браузъра, браузърът просто зарежда страницата – няма CORS ограничения, защото това не е AJAX заявка.
+Когато JavaScript (axios) прави заявка към друг домейн, браузърът проверява дали отговорът съдържа специалния хедър:
+Access-Control-Allow-Origin: http://127.0.0.1:8000
+или
+Access-Control-Allow-Origin: *
+Ако липсва такъв хедър – браузърът блокира достъпа до отговора.
+Причини за грешката
+Сървърът https://pgeebansko.org не връща нужните CORS хедъри в отговора си.
+Това е стандартна защита, за да не може всеки сайт да прави заявки към твоя бекенд.
+Как да го оправиш (решения)
+1. Промени CORS настройките на API сървъра
+Ако имаш достъп до кода на https://pgeebansko.org:
+
+Ако бекендът е Django, инсталирай django-cors-headers:
+
+pip install django-cors-headers
+В settings.py:
+
+INSTALLED_APPS += ['corsheaders']
+MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
+
+# За development:
+CORS_ALLOW_ALL_ORIGINS = True
+
+# За production (по-сигурно):
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+    # и други разрешени фронтенд адреси
+]
+Рестартирай сървъра!
+
+2. Прокси (proxy) през твоя Django сървър
+Ако нямаш достъп до настройките на https://pgeebansko.org, можеш да направиш твой Django view, което препраща (proxy) заявките към външния API. Фронтендът ще вика твоето API (на localhost), което вече може да прави външни заявки без CORS проблеми.
+
+3. Разрешаване CORS само за development
+Не оставяй CORS_ALLOW_ALL_ORIGINS = True в production, защото това е уязвимост!
+Винаги ограничавай до нужните домейни.
+
+4. Други варианти
+Ако API-то е на твоя контрол, просто добави нужните CORS хедъри.
+Ако не е на твой контрол, ползвай прокси.
+Не може да се заобиколи CORS от клиентска страна – това е вградено в браузъра.
+Обобщение
+Грешката е, защото сървърът не разрешава cross-origin заявки.
+Решения:
+Настрой CORS хедърите на API сървъра.
+Ползвай прокси през твоя бекенд.
+Не може да се оправи само с настройки на axios или браузъра.
