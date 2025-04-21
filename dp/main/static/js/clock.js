@@ -34,7 +34,8 @@ function updateTime () {
 }
 
 function tick () {
-  tickElements.forEach(t => t.classList.toggle('tick-hidden'))
+  tickElements.forEach(t => t.classList.toggle('tick-hidden'));
+
 }
 
 function updateContainer (container, newTime) {
