@@ -25,28 +25,28 @@
                             <div class="clock">
                               <div class="hours">
                                 <div class="first">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_hours[0] }}</div>
                                 </div>
                                 <div class="second">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_hours[1] }}</div>
                                 </div>
                               </div>
                               <div class="tick">:</div>
                               <div class="minutes">
                                 <div class="first">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_minutes[0] }}</div>
                                 </div>
                                 <div class="second">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_minutes[1] }}</div>
                                 </div>
                               </div>
                               <div class="tick">:</div>
                               <div class="seconds">
                                 <div class="first">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_seconds[0] }}</div>
                                 </div>
                                 <div class="second infinite">
-                                  <div class="number">0</div>
+                                  <div class="number">{{ dc_seconds[1] }}</div>
                                 </div>
                               </div>
                             </div>
@@ -118,17 +118,36 @@
                 </div>
             </div>
             <div class="body_2 mt-10" v-else>
-                <div class="clock">
-                    <div class="hour">
-                        <div class="hr" id="hr"></div>
-                    </div>
-                    <div class="min">
-                        <div class="mn" id="mn"></div>
-                    </div>
-                    <div class="sec">
-                        <div class="sc" id="sc"></div>
-                    </div>
-                </div>
+        <!-- ---------- CLOCK --------------------- -->
+                            <div class="clock">
+                              <div class="hours">
+                                <div class="first">
+                                  <div class="number">{{ dc_hours[0] }}</div>
+                                </div>
+                                <div class="second">
+                                  <div class="number">{{ dc_hours[1] }}</div>
+                                </div>
+                              </div>
+                              <div class="tick">:</div>
+                              <div class="minutes">
+                                <div class="first">
+                                  <div class="number">{{ dc_minutes[0] }}</div>
+                                </div>
+                                <div class="second">
+                                  <div class="number">{{ dc_minutes[1] }}</div>
+                                </div>
+                              </div>
+                              <div class="tick">:</div>
+                              <div class="seconds">
+                                <div class="first">
+                                  <div class="number">{{ dc_seconds[0] }}</div>
+                                </div>
+                                <div class="second infinite">
+                                  <div class="number">{{ dc_seconds[1] }}</div>
+                                </div>
+                              </div>
+                            </div>
+        <!-- -------------------------------------- -->
             </div>
         </div>
     </body>

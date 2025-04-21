@@ -28,12 +28,9 @@ const App = {
                },
          curriculum: [],
 
-         hoursContainer: 0,
-         minutesContainer: 0,
-         secondsContainer: 0,
-         tickElements: 0,
-         last: 0,
-         tickState: true,
+         dc_hours: ['0','0'],
+         dc_minutes: ['0','0'],
+         dc_seconds: ['0','0'],
          }
      },
     methods:{
@@ -86,6 +83,10 @@ const App = {
             let h_=(day.getHours()+this.offset_h+LOCAL_H)%24
             let m_=(day.getMinutes()+this.offset_m+LOCAL_M)%60
             let s_=day.getSeconds()
+
+            this.dc_hours   = String(h_).padStart(2, '0').split('');
+            this.dc_minutes = String(m_).padStart(2, '0').split('');
+            this.dc_seconds = String(s_).padStart(2, '0').split('');
 
             this.timer()
             if (this.enabled&&(this.timeout_r==0)){this.setTrain(h_, m_)}
@@ -176,87 +177,12 @@ const App = {
             this.makeTimers()
         },
 
-        dc_init(){
-            this.hoursContainer = document.querySelector('.hours')
-            this.minutesContainer = document.querySelector('.minutes')
-            this.secondsContainer = document.querySelector('.seconds')
-            this.tickElements = Array.from(document.querySelectorAll('.tick'))
-
-            this.last = new Date(0)
-            this.last.setUTCHours(-1)
-
-            this.tickState = true
-
-            setInterval(this.dc_updateTime, 100)
-        },
-        dc_updateTime () {
-            var now = new Date
-
-            var lastHours = this.last.getHours().toString()
-            var nowHours = now.getHours().toString()
-            if (lastHours !== nowHours) {
-                this.dc_updateContainer(this.hoursContainer, nowHours)
-            }
-
-            var lastMinutes = this.last.getMinutes().toString()
-            var nowMinutes = now.getMinutes().toString()
-            if (lastMinutes !== nowMinutes) {
-                this.dc_updateContainer(this.minutesContainer, nowMinutes)
-            }
-
-            var lastSeconds = this.last.getSeconds().toString()
-            var nowSeconds = now.getSeconds().toString()
-            if (lastSeconds !== nowSeconds) {
-                //tick()
-                this.dc_updateContainer(this.secondsContainer, nowSeconds)
-                }
-
-            this.last = now
-        },
-        dc_tick () {
-            this.tickElements.forEach(t => t.classList.toggle('tick-hidden'))
-
-            },
-        dc_updateContainer (container, newTime) {
-            var time = newTime.split('')
-
-            if (time.length === 1) {
-                time.unshift('0')
-            }
-
-
-            var first = container.firstElementChild
-            if (first.lastElementChild.textContent !== time[0]) {
-                this.dc_updateNumber(first, time[0])
-            }
-
-            var last = container.lastElementChild
-            if (last.lastElementChild.textContent !== time[1]) {
-                this.dc_updateNumber(last, time[1])
-            }
-        },
-        dc_updateNumber (element, number) {
-            //element.lastElementChild.textContent = number
-            var second = element.lastElementChild.cloneNode(true)
-            second.textContent = number
-
-            element.appendChild(second)
-            element.classList.add('move')
-
-            setTimeout(function () {
-                element.classList.remove('move')
-            }, 990)
-            setTimeout(function () {
-                element.removeChild(element.firstElementChild)
-            }, 990)
-        },
     },
     created: function(){
         this.loadParams();
         this.loadHours();
         setInterval(() =>{this.clock()}, 1000)
         this.loadCurriculum()
-        this.dc_init()
     }
 }
 
