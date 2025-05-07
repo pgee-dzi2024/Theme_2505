@@ -1,4 +1,4 @@
-const LOCAL_H = 12
+const LOCAL_H = 1
 const LOCAL_M = 0
 
 const App = {
@@ -70,10 +70,10 @@ const App = {
                 })
         },
         clock(){
-            let deg=6
             let hr=document.querySelector('#hr')
             let mn=document.querySelector('#mn')
             let sc=document.querySelector('#sc')
+
             let day = new Date()
             let dayNum=0
             dayNum=day.getDay() + 1 + this.offset_d
