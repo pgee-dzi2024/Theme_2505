@@ -20,7 +20,7 @@ def proxy_to_curriculum(request, day_num, hour_num):
         # Препращаш status кода и съдържанието
         return HttpResponse(
             external_response.content,
-            status=external_response.status_code,,
+            status=external_response.status_code,
             content_type=external_response.headers.get('Content-Type', 'application/json')
         )
     else:
