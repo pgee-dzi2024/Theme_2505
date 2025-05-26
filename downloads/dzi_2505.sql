@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Време на генериране: 31 март 2025 в 20:50
+-- Време на генериране: 26 май 2025 в 13:31
 -- Версия на сървъра: 10.4.32-MariaDB
 -- Версия на PHP: 8.2.12
 
@@ -112,7 +112,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$600000$xypmNe70ycewu40jWYPzYr$5mgsNYpoIiLHESBYBzxsfGL4e7mu0Ew6BWRSWe4eBNA=', NULL, 1, 'dzi_25', '', '', '', 1, 1, '2025-03-31 18:49:27.519933');
+(1, 'pbkdf2_sha256$600000$xypmNe70ycewu40jWYPzYr$5mgsNYpoIiLHESBYBzxsfGL4e7mu0Ew6BWRSWe4eBNA=', '2025-04-22 06:41:41.922516', 1, 'dzi_25', '', '', '', 1, 1, '2025-03-31 18:49:27.519933');
 
 -- --------------------------------------------------------
 
@@ -227,6 +227,13 @@ CREATE TABLE `django_session` (
   `session_data` longtext NOT NULL,
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Схема на данните от таблица `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('jz6e7l5w6r85aqu21jcxfjmixin8j62l', '.eJxVjLEOwjAMRP8lM4rihtQJIzvfEDm2SwuolZp2Qvw7rdQBhlvuvbu3ybQufV6rznkQczFgTr9dIX7quAN50HifLE_jMg_F7oo9aLW3SfR1Pdy_g55qv60bdCgeGp9YQiI9J3FcPEnHgi5qgxECckCNpVPClpDjFgYPCqk1ny_pQzg9:1u77K9:E0uROThgbZPWG1gVA-xNMzkhSa9dfkccKMxihpxJ6js', '2025-05-06 06:41:41.931159');
 
 --
 -- Indexes for dumped tables
